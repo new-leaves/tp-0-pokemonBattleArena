@@ -7,6 +7,8 @@ from tkinter import messagebox
 #Import here.
 #FIX ME.
 
+winSize = (600, 400)
+
 def initMain():
     #Pokemons
     
@@ -156,8 +158,6 @@ def healthBar(screen, hpMax, newHp, isPok1):
             pygame.draw.rect(screen, colorBar, pygame.Rect(130, 82, 0, 7))
 
 def main():
-    winSize = (600, 400)
-    
     #Initializing everything.
     screen = pygame.display.set_mode(winSize)
     pygame.display.set_caption("Pokemon Battle Arena")
