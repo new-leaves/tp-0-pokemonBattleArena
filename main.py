@@ -158,6 +158,8 @@ def healthBar(screen, hpMax, newHp, isPok1):
             pygame.draw.rect(screen, colorBar, pygame.Rect(130, 82, 0, 7))
 
 def main():
+    #Avoid crashing the game while picking the character.
+    begin = False
     #Initializing everything.
     screen = pygame.display.set_mode(winSize)
     pygame.display.set_caption("Pokemon Battle Arena")
@@ -231,7 +233,7 @@ def main():
                 spellMenuImg.isActivated = False
                 menuBack, alreadyClicked, rectFightClicked =  True, False, False
             
-            if event.type == MOUSEBUTTONDOWN:
+            if begin and event.type == MOUSEBUTTONDOWN:
 
                 mouse_pos = event.pos 
                                    
@@ -534,6 +536,7 @@ def main():
                 pokemonMsgImg.isActivated = False
                 spellMenuImg.isActivated = False
         
+        begin = True
         clock.tick(18)
         pygame.display.update(dirtyRects)
        
